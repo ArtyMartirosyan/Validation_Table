@@ -71,11 +71,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var parent = document.body;
         var child = document.getElementsByClassName("box")[0];
         parent.removeChild(child);
-    }
-
-    
+    }    
 });
 
+//validating the table inputs
 $(document).ready(function() {
     $('form[id="formInput"]').validate({
         rules: {
@@ -104,7 +103,8 @@ $(document).ready(function() {
                 required: true
             }
         },
-    
+        
+        // output error messages
         messages: {
             rfrom: {
                 number: " you did not enter a valid number.<br/>Enter a number between -100 and 100 for 'row from' value.",
@@ -133,6 +133,7 @@ $(document).ready(function() {
         },
     });
 
+    //realtime error output msg
     $("#formInput").on('keyup blur', function(){
         $("#formInput").validate().checkForm();
     });
